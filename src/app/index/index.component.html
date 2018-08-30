@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>NPM</th>
+      <th>Nama</th>
+      <th>Alamat</th>
+      <th>Tanggal Lahir</th>
+      <th>Jenis Kelamin</th>
+      <th colspan="2">Proses</th>
+    </tr>
+  </thead>
+    <tr *ngFor="let item of mahasiswa">
+        <td>{{ item.npm }}</td>
+        <td>{{ item.nama }}</td>
+        <td>{{ item.alamat }}</td>
+        <td>{{ item.tanggallahir }}</td>
+        <td>{{ item.jeniskelamin }}</td>
+        <td><a [routerLink]="['/edit', item.npm]" class="btn btn-primary">Edit</a></td>
+        <td><a routerLink="" class="btn btn-danger">Delete</a></td>
+    </tr>
+  <tbody>
+  </tbody>
+</table>
