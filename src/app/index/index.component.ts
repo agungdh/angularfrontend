@@ -2,6 +2,7 @@ import { MahasiswaService } from '../mahasiswa.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-index',
@@ -40,7 +41,8 @@ export class IndexComponent implements OnInit {
 	    				break;
 	    			
 	    			case "tanggallahir":
-	    				satuMahasiswaJadi.tanggallahir = satuMahasiswa[keySatuMahasiswa];
+	    				let tanggallahir = moment(satuMahasiswa[keySatuMahasiswa]).format('DD-MM-YYYY');
+	    				satuMahasiswaJadi.tanggallahir = tanggallahir;
 	    				break;
 	    			
 	    			case "jeniskelamin":
