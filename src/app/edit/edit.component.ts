@@ -43,7 +43,10 @@ export class EditComponent implements OnInit {
         this.angForm.get('alamat').setValue(res.alamat);
         this.angForm.get('tanggallahir').setValue(moment(res.tanggallahir).format('YYYY-MM-DD'));
         this.angForm.get('jeniskelamin').setValue(res.jeniskelamin);
-      });
+      }, err => {
+              alert('ERROR !!!' + "\n" + err.error.description)
+              location.href = "/index";
+            });
     });
   }
 }
