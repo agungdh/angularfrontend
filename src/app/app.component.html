@@ -1,14 +1,14 @@
-<!-- <div style="text-align:center">
+<div style="text-align:center">
   <h1>
-    Welcome to {{title}}!!
+    {{title}}!!
   </h1>
   
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
         <li class="active">
-          <a routerLink="create" routerLinkActive="active">
-            Add coins
+          <a class="btn btn-primary" routerLink="create" routerLinkActive="active">
+            Tambah Mahasiswa
           </a>
         </li>    
       </ul>
@@ -18,22 +18,4 @@
   <div class="container">
     <router-outlet></router-outlet>
   </div>
-</div> -->
-
-<div class="container">
-  <div class="py-5 text-center">
-    <h2>{{ title }}</h2>
-    <p class="lead">Frontend CRUD Mahasiswa</p>
-  </div>
-
-  <div class="row">
-    <a routerLink="create" routerLinkActive="active">
-      Tambah Mahasiswa
-    </a>
-    <router-outlet></router-outlet>
-  </div>
-
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2018 AgungDH</p>
-  </footer>
 </div>
