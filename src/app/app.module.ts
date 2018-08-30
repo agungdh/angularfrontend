@@ -6,6 +6,10 @@ import { IndexComponent } from './index/index.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 
+import { RouterModule } from '@angular/router';
+
+import { appRoutes } from './routerConfig';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +18,8 @@ import { EditComponent } from './edit/edit.component';
     EditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
