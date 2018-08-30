@@ -37,7 +37,7 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.service.ambil1Mahasiswa(params['npm']).subscribe(res => {
+      this.service.ambil1Mahasiswa(params['npm']).subscribe((res: any) => {
         this.angForm.get('npm').setValue(res.npm);
         this.angForm.get('nama').setValue(res.nama);
         this.angForm.get('alamat').setValue(res.alamat);
