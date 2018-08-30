@@ -23,7 +23,7 @@ export class CreateComponent implements OnInit {
       jeniskelamin: ['', Validators.required ]
    });
   }
-  tambahMahasiswa(name, price) {
+  tambahMahasiswa(npm, nama, alamat, tanggallahir, jeniskelamin) {
       this.mahasiswaservice.tambahMahasiswa(npm, nama, alamat, tanggallahir, jeniskelamin);
   }
   ngOnInit() {
