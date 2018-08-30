@@ -16,7 +16,7 @@
         <td>{{ item.tanggallahir }}</td>
         <td>{{ item.jeniskelamin }}</td>
         <td><a [routerLink]="['/edit', item.npm]" class="btn btn-primary">Edit</a></td>
-        <td><a routerLink="" class="btn btn-danger">Delete</a></td>
+        <td><button (click)="hapusMahasiswa(item.npm)"  class="btn btn-danger">Delete</button></td>
     </tr>
   <tbody>
   </tbody>

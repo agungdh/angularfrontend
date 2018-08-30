@@ -65,6 +65,14 @@ export class IndexComponent implements OnInit {
 
       this.mahasiswa = semuaMahasiswa;
 
+    }, err => {
+    	alert('ERROR !!!'+ "\n" + 'Server backend tidak aktif');
     });
   }
+
+  	hapusMahasiswa(npm) {
+  		if (confirm('Yakin hapus ?')) {
+  			this.service.hapusMahasiswa(npm);
+  		}
+	}
 }

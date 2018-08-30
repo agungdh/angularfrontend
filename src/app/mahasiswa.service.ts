@@ -37,13 +37,25 @@ export class MahasiswaService {
                         }));
   }
 
-  ambil1Mahasiswa(id) {
-    const uri = this.parentUri + 'mahasiswa' + id;
+  ambil1Mahasiswa(npm) {
+    const uri = this.parentUri + 'mahasiswa/' + npm;
     return this
             .http
             .get(uri)
             .pipe(map(res => {
                           return res;
                         }));
+  }
+
+  hapusMahasiswa(npm) {
+    const uri = this.parentUri + 'mahasiswa/' + npm;
+    return this
+            .http
+            .delete(uri)
+            .subscribe(res => {
+              location.href = "/index";
+            }, err => {
+              alert('ERROR !!!' + "\n" + err.error.description);
+            });
   }
 }
