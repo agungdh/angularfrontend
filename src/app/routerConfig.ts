@@ -8,7 +8,7 @@ export const appRoutes: Routes = [
     component: CreateComponent 
   },
   {
-    path: 'edit/:id',
+    path: 'edit/:npm',
     component: EditComponent
   },
   { path: 'index',

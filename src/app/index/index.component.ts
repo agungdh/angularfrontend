@@ -46,9 +46,9 @@ export class IndexComponent implements OnInit {
 	    				break;
 	    			
 	    			case "jeniskelamin":
-	    				if (satuMahasiswa[keySatuMahasiswa] == 'l') {
+	    				if (satuMahasiswa[keySatuMahasiswa] == 'p') {
 	    					satuMahasiswaJadi.jeniskelamin = 'Perempuan';
-	    				} else if (satuMahasiswa[keySatuMahasiswa] == 'p') {
+	    				} else if (satuMahasiswa[keySatuMahasiswa] == 'l') {
 	    					satuMahasiswaJadi.jeniskelamin = 'Laki-Laki';
 	    				} else {
 	    					satuMahasiswaJadi.jeniskelamin = 'ERROR !!!';

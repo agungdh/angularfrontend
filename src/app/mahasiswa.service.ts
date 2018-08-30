@@ -47,6 +47,25 @@ export class MahasiswaService {
                         }));
   }
 
+  ubahMahasiswa(npm, nama, alamat, tanggallahir, jeniskelamin, wherenpm) {
+    const uri = this.parentUri + 'mahasiswa/' + wherenpm;
+    const obj = {
+      npm: npm,
+      nama: nama,
+      alamat: alamat,
+      tanggallahir: tanggallahir,
+      jeniskelamin: jeniskelamin
+    };
+    return this
+            .http
+            .put(uri, obj)
+            .subscribe(res => {
+              location.href = "/index";
+            }, err => {
+              alert('ERROR !!!' + "\n" + err.error.description);
+            });
+  }
+
   hapusMahasiswa(npm) {
     const uri = this.parentUri + 'mahasiswa/' + npm;
     return this
