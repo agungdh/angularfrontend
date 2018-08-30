@@ -28,7 +28,7 @@ export class EditComponent implements OnInit {
    });
   }
 
-  ubahMahasiswa(npm, nama, alamat, tanggallahir, jeniskelamin, wherenpm) {
+  ubahMahasiswa(npm, nama, alamat, tanggallahir, jeniskelamin) {
     this.route.params.subscribe(params => {
     this.service.ubahMahasiswa(npm, nama, alamat, tanggallahir, jeniskelamin, params['npm']);
     location.href = "/index";
