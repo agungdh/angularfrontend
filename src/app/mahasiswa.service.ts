@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+import { Observable, of } from 'rxjs'
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class MahasiswaService {
@@ -19,5 +21,25 @@ export class MahasiswaService {
     };
     this.http.post(uri, obj)
         .subscribe(res => console.log('Done'));
+  }
+
+  ambilMahasiswa() {
+    const uri = this.parentUri + 'mahasiswa';
+    return this
+            .http
+            .get(uri)
+            .pipe(map(res => {
+                          return res;
+                        }));
+  }
+
+  ambil1Mahasiswa(id) {
+    const uri = this.parentUri + 'mahasiswa' + id;
+    return this
+            .http
+            .get(uri)
+            .pipe(map(res => {
+                          return res;
+                        }));
   }
 }
