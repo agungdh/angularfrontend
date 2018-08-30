@@ -20,7 +20,11 @@ export class MahasiswaService {
       jeniskelamin: jeniskelamin
     };
     this.http.post(uri, obj)
-        .subscribe(res => console.log('Done'));
+        .subscribe(res => {
+          location.href = "/index";
+        }, err => {
+          alert('ERROR !!!' + "\n" + err.error.description);
+        });
   }
 
   ambilMahasiswa() {
