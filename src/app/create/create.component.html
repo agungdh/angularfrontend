@@ -36,7 +36,7 @@
         
         <div class="form-group">
           <label class="col-md-4">Tanggal Lahir</label>
-          <input type="text" class="form-control" formControlName="tanggallahir" #tanggallahir />
+          <input type="date" class="form-control" formControlName="tanggallahir" #tanggallahir />
         </div>
         <div *ngIf="angForm.controls['tanggallahir'].invalid && (angForm.controls['tanggallahir'].dirty || angForm.controls['tanggallahir'].touched)" class="alert alert-danger">
           <div *ngIf="angForm.controls['tanggallahir'].errors.required">
@@ -46,7 +46,10 @@
         
         <div class="form-group">
           <label class="col-md-4">Jenis Kelamin</label>
-          <input type="text" class="form-control" formControlName="jeniskelamin" #jeniskelamin />
+          <select class="form-control" formControlName="jeniskelamin" #jeniskelamin>
+          	<option value="l">Laki-Laki</option>
+          	<option value="p">Perempuan</option>
+          </select>
         </div>
         <div *ngIf="angForm.controls['jeniskelamin'].invalid && (angForm.controls['jeniskelamin'].dirty || angForm.controls['jeniskelamin'].touched)" class="alert alert-danger">
           <div *ngIf="angForm.controls['jeniskelamin'].errors.required">
