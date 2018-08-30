@@ -1,35 +1,61 @@
-  <div class="panel panel-primary">
+<div class="panel panel-primary">
     <div class="panel-heading">
       {{ title }}
     </div>
     <div class="panel-body">
-      <form>
+      <form [formGroup]="angForm" novalidate>
         <div class="form-group">
-          <label>NPM</label>
-          <input type="text" class="form-control" name="npm"/>
+          <label class="col-md-4">NPM</label>
+          <input type="text" class="form-control" formControlName="npm" #npm />
         </div>
-        <div class="form-group">
-          <label>Nama</label>
-          <input type="text" class="form-control" name="nama"/>
+        <div *ngIf="angForm.controls['npm'].invalid && (angForm.controls['npm'].dirty || angForm.controls['npm'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['npm'].errors.required">
+            NPM is required.
+          </div>
         </div>
+        
         <div class="form-group">
-          <label>Alamat</label>
-          <input type="text" class="form-control" name="alamat"/>
+          <label class="col-md-4">Nama</label>
+          <input type="text" class="form-control" formControlName="nama" #nama />
         </div>
-        <div class="form-group">
-          <label>Tanggal Lahir</label>
-          <input type="date" class="form-control" name="tanggallahir"/>
+        <div *ngIf="angForm.controls['nama'].invalid && (angForm.controls['nama'].dirty || angForm.controls['nama'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['nama'].errors.required">
+            Nama is required.
+          </div>
         </div>
+        
         <div class="form-group">
-          <label>Jenis Kelamin</label>
-          <select class="form-control" name="jeniskelamin">
-          	<option value="l">Laki-Laki</option>
-          	<option value="p">Perempuan</option>
-          </select>
+          <label class="col-md-4">Alamat</label>
+          <input type="text" class="form-control" formControlName="alamat" #alamat />
         </div>
-
+        <div *ngIf="angForm.controls['alamat'].invalid && (angForm.controls['alamat'].dirty || angForm.controls['alamat'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['alamat'].errors.required">
+            Alamat is required.
+          </div>
+        </div>
+        
         <div class="form-group">
-          <button type="submit" class="btn btn-success">Tambah</button>
+          <label class="col-md-4">Tanggal Lahir</label>
+          <input type="text" class="form-control" formControlName="tanggallahir" #tanggallahir />
+        </div>
+        <div *ngIf="angForm.controls['tanggallahir'].invalid && (angForm.controls['tanggallahir'].dirty || angForm.controls['tanggallahir'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['tanggallahir'].errors.required">
+            Tanggal Lahir is required.
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="col-md-4">Jenis Kelamin</label>
+          <input type="text" class="form-control" formControlName="jeniskelamin" #jeniskelamin />
+        </div>
+        <div *ngIf="angForm.controls['jeniskelamin'].invalid && (angForm.controls['jeniskelamin'].dirty || angForm.controls['jeniskelamin'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['jeniskelamin'].errors.required">
+            Jenis Kelamin is required.
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <button (click)="addCoin(name.value, price.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
         </div>
       </form>
     </div>
